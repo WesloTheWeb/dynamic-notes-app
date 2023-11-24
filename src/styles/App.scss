@@ -2,6 +2,7 @@
 
 body {
   background-color: $backgroundColor;
+  color: #fff;
   font-size: 16px;
 }
 
@@ -11,4 +12,14 @@ h1 {
   font-weight: bold;
   font-size: 4rem;
   color: orange;
+}
+
+button {
+  display: block;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: black;
+  padding: .5rem .75rem;
+  border-radius: 10px;
 }

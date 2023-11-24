@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = () => {
+const Header = ({}) => {
     return (
         <h1>Dynamic Notes App</h1>
     );
