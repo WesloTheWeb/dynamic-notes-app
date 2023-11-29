@@ -1,28 +1,31 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "./store";
 
-export interface NoteFormState {
-    value: string
+type Note = {
+    id?: number;
+    title: string;
+    content: string;
+}
+
+interface NoteFormState {
+    notes: Note[];
 };
 
 const initialState: NoteFormState = {
-    value: ''
+    notes: []
 };
 
 export const noteFormSlice = createSlice({
     name: 'note',
     initialState,
     reducers: {
-        updateNote: (state, action: PayloadAction<string>) => {
-            state.value = action.payload;
-        },
-        clearNote: (state) => {
-            state.value = '';
-        }
+       addNote: (state, action: PayloadAction<Note>) => {
+        state.notes.push(action.payload);
+       },
     }
 });
 
-export const {updateNote, clearNote} = noteFormSlice.actions;
+export const { addNote } = noteFormSlice.actions;
 // Other code such as selectors can use the imported `RootState` type
 export const noteForm = (state: RootState) => state.note.value;
 

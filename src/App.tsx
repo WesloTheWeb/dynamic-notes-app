@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux'
 import Header from './components/Header/Header'
 import './styles/App.scss'
 import NoteForm from './components/NoteForm/NoteForm'
@@ -6,23 +7,7 @@ import NoteEntry from './components/NoteEntry/NoteEntry'
 
 function App() {
 
-  const SAMPLE_DATA = [
-    {
-      id: 1,
-      title: `Introduction`,
-      content: `Hello, I'm Shelley Duvall.`
-    },
-    {
-      id: 2,
-      title: `Introduction`,
-      content: `Hello. I'm Shelley Duvall.`
-    },
-    {
-      id: 3,
-      title: `Introduction`,
-      content: `Hello! I'm Shelley Duvall!`
-    }
-  ]
+  const generatedNotes = useSelector((state) => state.note.notes)
 
   return (
     <>
@@ -30,18 +15,16 @@ function App() {
       <Instructions />
       <NoteForm />
       <section className="noteEntry-container">
-        {
-          SAMPLE_DATA.map((note, id) => {
-            return (
-              <NoteEntry
-                key={id}
-                content={note.content}
-                title={note.title}
-                id={note.id}
-              />
-            )
-          })
-        }
+      {
+        generatedNotes.map((note, index) => (
+          <NoteEntry
+            key={index}
+            content={note.content}
+            title={note.title}
+            id={note.id}
+          />
+        ))
+      }
       </section>
     </>
   )

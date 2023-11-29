@@ -9,14 +9,15 @@ interface NoteEntryProps {
 };
 
 const NoteEntry = ({ id, title, content }: NoteEntryProps) => {
+    const formattedDate = new Date().toLocaleString(); 
 
     return (
         <section className={noteEntryContainer}>
             <div className={noteEntryHeader}>
                 <h3>{title}</h3>
                 <div className={noteTimeStamp}>
-                    <p>{id}</p>
-                    <label>{Date.now().toLocaleString()}</label>
+                    <p>Note submitted:</p>
+                    <label>{formattedDate}</label>
                 </div>
             </div>
             <div>{content}</div>

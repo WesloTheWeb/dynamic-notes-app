@@ -4,7 +4,6 @@ import noteFormReducer from './noteFormSlice';
 
 const store = configureStore({
   reducer: {
-    counter: counterReducer, // Add the counterReducer to the storef
     note: noteFormReducer,
   }
 })
