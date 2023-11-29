@@ -33,12 +33,12 @@ function App() {
         {
           SAMPLE_DATA.map((note, id) => {
             return (
-              <NoteEntry 
+              <NoteEntry
                 key={id}
-                content={note.content} 
+                content={note.content}
                 title={note.title}
                 id={note.id}
-                />
+              />
             )
           })
         }

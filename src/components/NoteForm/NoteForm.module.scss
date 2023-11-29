@@ -10,16 +10,27 @@
         width: 100%;
         height: 5rem;
         margin: 0 0 1.5rem 0;
-    }    
+    }
 
     button {
         background-color: $submitBackground;
         font-weight: bold;
         border: none;
-        color: #fff;
+        color: $buttonFontColor;
+        margin: 0 .85rem;
+
+        &:first-child {
+            color: $buttonFontColor;
+            background-color: $clearNoteBackground;
+
+            &:hover {
+                color: $buttonFontColor;
+                background-color: $clearNoteBackgroundHover;
+            }
+        }
 
         &:hover {
-            color: rgb(242, 217, 170);
+            color: $submitFontColorHover;
             background-color: $submitBackgroundHover;
         }
     }

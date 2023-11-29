@@ -20,6 +20,7 @@ const NoteForm = () => {
             <textarea {...register("note", { required: "This field is required" })} />
             {errors.note && <span>{errors.note.message}</span>}
             <div className={noteFormContainerControllers}>
+                <button type="submit" value="Submit Note">Clear Note</button>
                 <button type="submit" value="Submit Note">Submit Note</button>
             </div>
         </form>
