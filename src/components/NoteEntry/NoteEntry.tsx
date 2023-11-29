@@ -1,3 +1,6 @@
+import classes from './NoteEntry.module.scss';
+
+const { noteEntryContainer, noteEntryHeader, noteTimeStamp } = classes;
 
 interface NoteEntryProps {
     id?: number,
@@ -5,12 +8,17 @@ interface NoteEntryProps {
     content: string
 };
 
-
-const NoteEntry = ({id, title, content}: NoteEntryProps) => {
+const NoteEntry = ({ id, title, content }: NoteEntryProps) => {
 
     return (
-        <section>
-            <h3>{title}</h3>
+        <section className={noteEntryContainer}>
+            <div className={noteEntryHeader}>
+                <h3>{title}</h3>
+                <div className={noteTimeStamp}>
+                    <p>{id}</p>
+                    <label>{Date.now().toLocaleString()}</label>
+                </div>
+            </div>
             <div>{content}</div>
         </section>
     )
